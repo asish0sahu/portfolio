@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Redefining emerald shades to the Elegant Dark vibrant blues */
+  --color-emerald-50: #f0f7ff;
+  --color-emerald-100: #e0f0ff;
+  --color-emerald-200: #b9ddff;
+  --color-emerald-300: #7cc2ff;
+  --color-emerald-400: #38a5ff;
+  --color-emerald-500: #2563eb; /* Matching the blue-600 highlight */
+  --color-emerald-600: #1d4ed8;
+  --color-emerald-700: #1e40af;
+  --color-emerald-800: #1e3a8a;
+  --color-emerald-950: #0f1e36;
+
+  /* Teal & Cyan adjustments for matching cold tech tones */
+  --color-teal-500: #3b82f6;
+  --color-teal-400: #60a5fa;
+  --color-teal-300: #93c5fd;
+
+  /* Deep slate/grey overrides matching Elegant Dark background #0a0b0d */
+  --color-slate-900: #0a0b0d;
+  --color-slate-950: #060708;
+  --color-slate-800: #14161a;
+  --color-slate-850: #0f1013;
+  --color-slate-700: #22252a;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #0a0b0d; /* Elegant Dark deep background */
+  color: #d1d5db; /* gray-300 text */
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060708;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14161a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #22252a;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(10, 11, 13, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(20, 22, 26, 0.65);
+  border-color: rgba(37, 99, 235, 0.3); /* Blue hover glow */
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.15);
+}
+
+/* Pulse animation for active indicator */
+@keyframes soft-pulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 4s infinite ease-in-out;
+}
+
